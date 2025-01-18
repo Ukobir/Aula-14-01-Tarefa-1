@@ -12,7 +12,7 @@ A seguir a lista de comandos utilizados no teclado:
 
 ## Imagem
 
-![Image](https://github.com/user-attachments/assets/382db8c0-ac4a-4c83-a142-96b830684557)
+![Image](https://github.com/user-attachments/assets/d595b771-1715-45c9-82e3-b89dcb8525ee)
 
 ## URL do video do funcionamento do programa
 
