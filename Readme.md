@@ -12,7 +12,7 @@ A seguir a lista de comandos utilizados no teclado:
 
 ## Imagem
 
-C:\Users\BkLeo\Documents\Curso\Embarcatech\Capitulo 4-1\AULA_14\Tarefa_1\Tarefa_1\img.png
+![Image](https://github.com/user-attachments/assets/382db8c0-ac4a-4c83-a142-96b830684557)
 
 ## URL do video do funcionamento do programa
 
