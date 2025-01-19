@@ -7,7 +7,7 @@
 // define os pinos LED de saída
 const uint GPIO_LED[3] = {18, 19, 20};
 
-// define os pino Buzzer de saída
+// define o pino do Buzzer de saída
 const uint GPIO_BUZZ = 28;
 
 // define os pinos do teclado com as portas GPIO
@@ -42,24 +42,29 @@ int main()
         case 'A':
             pino = GPIO_LED[0];
             ligaGPIO(pino);
+            printf("LED Azul (A) ativado\n");
             break;
         case 'B':
             pino = GPIO_LED[1];
             ligaGPIO(pino);
+            printf("LED Rosa (B) ativado\n");
             break;
         case 'C':
             pino = GPIO_LED[2];
             ligaGPIO(pino);
+            printf("LED Roxo (C) ativado\n");
             break;
         case 'D':
             pino = GPIO_BUZZ;
             ligaGPIO(pino);
+            printf("Buzzer (D) ativado\n");
             break;
         default:
             gpio_put(GPIO_LED[0], false);
             gpio_put(GPIO_LED[1], false);
             gpio_put(GPIO_LED[2], false);
             gpio_put(GPIO_BUZZ, false);
+            printf("Todos os LEDs e o Buzzer foram desligados\n");
             break;
         }
     }
