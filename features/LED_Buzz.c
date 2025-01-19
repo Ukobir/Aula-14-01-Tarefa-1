@@ -20,16 +20,16 @@ void ligaGPIO(uint gpio)
     gpio_put(gpio, 1);
 }
 
-// Exibe uma mensagem informativo inicial no terminal
+// Exibe uma mensagem informativa inicial no terminal
 void menu()
 {
-    
     printf("\t## Acionamento de LED e Buzzer pelo Teclado 4x4 ##\n");
     printf("Possui os seguintes comandos:\n");
     printf("1 - Aperte A para ligar o LED Azul\n");
     printf("2 - Aperte B para ligar o LED Rosa\n");
     printf("3 - Aperte C para ligar o LED Roxo\n");
     printf("4 - Aperte D para ligar o Buzzer\n");
+    printf("5 - Aperte * para acionar o efeito de piscar nos LEDs\n");
+    printf("6 - Aperte # para ativar o Buzzer por 1 segundo\n");
     printf("Obs: É necessário segurar a tecla por alguns segundos até que o comando seja registrado\n");
-
 }

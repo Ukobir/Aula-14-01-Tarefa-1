@@ -7,7 +7,7 @@
 // define os pinos LED de saída
 const uint GPIO_LED[3] = {18, 19, 20};
 
-// define os pino Buzzer de saída
+// define o pino do Buzzer de saída
 const uint GPIO_BUZZ = 28;
 
 // define os pinos do teclado com as portas GPIO
@@ -20,6 +20,18 @@ char KEY_MAP[16] = {
     '4', '5', '6', 'B',
     '7', '8', '9', 'C',
     '*', '0', '#', 'D'};
+
+// Função para gerar um tom no buzzer
+void buzzer_tone(uint gpio, int duration_ms, int frequency_hz)
+{
+    for (int i = 0; i < duration_ms * frequency_hz / 1000; i++)
+    {
+        gpio_put(gpio, 1); // Liga o buzzer
+        busy_wait_us(500000 / frequency_hz); // Espera metade do período
+        gpio_put(gpio, 0); // Desliga o buzzer
+        busy_wait_us(500000 / frequency_hz); // Espera a outra metade
+    }
+}
 
 // função principal
 int main()
@@ -36,30 +48,55 @@ int main()
         busy_wait_us(500000);
         tecla = pico_keypad_get_key();
 
-        // Avaliação de caractere para o LED
+        // Avaliação de caractere para o LED e Buzzer
         switch (tecla)
         {
         case 'A':
             pino = GPIO_LED[0];
             ligaGPIO(pino);
+            printf("LED Azul (A) ativado\n");
             break;
         case 'B':
             pino = GPIO_LED[1];
             ligaGPIO(pino);
+            printf("LED Rosa (B) ativado\n");
             break;
         case 'C':
             pino = GPIO_LED[2];
             ligaGPIO(pino);
+            printf("LED Roxo (C) ativado\n");
             break;
         case 'D':
             pino = GPIO_BUZZ;
             ligaGPIO(pino);
+            printf("Buzzer (D) ativado\n");
             break;
+
+        // Adicionando novas funções para o controle de LEDs e Buzzer
+        case '*':
+            // Colocando um efeito de piscar nos LEDs
+            for (int i = 0; i < 3; i++)
+            {
+                gpio_put(GPIO_LED[i], true);
+                busy_wait_ms(500);
+                gpio_put(GPIO_LED[i], false);
+                busy_wait_ms(500);
+            }
+            printf("Efeito de piscar nos LEDs\n");
+            break;
+
+        case '#':
+            // Agora, gera um tom no buzzer durante 1 segundo
+            buzzer_tone(GPIO_BUZZ, 1000, 1000);  // 1000 Hz durante 1 segundo
+            printf("Buzzer tocando a 1000 Hz por 1 segundo\n");
+            break;
+
         default:
             gpio_put(GPIO_LED[0], false);
             gpio_put(GPIO_LED[1], false);
             gpio_put(GPIO_LED[2], false);
             gpio_put(GPIO_BUZZ, false);
+            printf("Todos os LEDs e o Buzzer foram desligados\n");
             break;
         }
     }
