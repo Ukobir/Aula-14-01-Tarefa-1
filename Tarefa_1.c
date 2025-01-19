@@ -80,6 +80,40 @@ int main()
             printf("Buzzer tocando a 1000 Hz por 1 segundo\n");
             break;
 
+        case '2':  // Quando a tecla 2 for pressionada
+            pino = GPIO_LED[0];
+            ligaGPIO(pino);
+            pino = GPIO_LED[1];
+            ligaGPIO(pino);
+            printf("LED Azul e LED Rosa ativados\n");
+            break;
+
+        case '3':  // Quando a tecla 2 for pressionada
+            pino = GPIO_LED[0];
+            ligaGPIO(pino);
+            pino = GPIO_LED[1];
+            ligaGPIO(pino);
+            pino = GPIO_LED[2];
+            ligaGPIO(pino);
+            printf("LED Azul, LED Rosa e LED Roxo ativados\n");
+            break;
+
+        case '4':  // Quando a tecla 2 for pressionada
+            pino = GPIO_LED[0];
+            ligaGPIO(pino);
+            pino = GPIO_LED[2];
+            ligaGPIO(pino);
+            printf("LED Azul e LED Roxo ativados\n");
+            break;
+
+        case '5':  // Quando a tecla 2 for pressionada
+            pino = GPIO_LED[1];
+            ligaGPIO(pino);
+            pino = GPIO_LED[2];
+            ligaGPIO(pino);
+            printf("LED Rosa e LED Roxo ativados\n");
+            break;
+
         default:
             gpio_put(GPIO_LED[0], false);
             gpio_put(GPIO_LED[1], false);
