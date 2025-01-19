@@ -21,6 +21,18 @@ char KEY_MAP[16] = {
     '7', '8', '9', 'C',
     '*', '0', '#', 'D'};
 
+// Função para gerar um tom no buzzer
+void buzzer_tone(uint gpio, int duration_ms, int frequency_hz)
+{
+    for (int i = 0; i < duration_ms * frequency_hz / 1000; i++)
+    {
+        gpio_put(gpio, 1); // Liga o buzzer
+        busy_wait_us(500000 / frequency_hz); // Espera metade do período
+        gpio_put(gpio, 0); // Desliga o buzzer
+        busy_wait_us(500000 / frequency_hz); // Espera a outra metade
+    }
+}
+
 // função principal
 int main()
 {
@@ -36,7 +48,7 @@ int main()
         busy_wait_us(500000);
         tecla = pico_keypad_get_key();
 
-        // Avaliação de caractere para o LED
+        // Avaliação de caractere para o LED e Buzzer
         switch (tecla)
         {
         case 'A':
@@ -59,6 +71,26 @@ int main()
             ligaGPIO(pino);
             printf("Buzzer (D) ativado\n");
             break;
+
+        // Adicionando novas funções para o controle de LEDs e Buzzer
+        case '*':
+            // Colocando um efeito de piscar nos LEDs
+            for (int i = 0; i < 3; i++)
+            {
+                gpio_put(GPIO_LED[i], true);
+                busy_wait_ms(500);
+                gpio_put(GPIO_LED[i], false);
+                busy_wait_ms(500);
+            }
+            printf("Efeito de piscar nos LEDs\n");
+            break;
+
+        case '#':
+            // Agora, gera um tom no buzzer durante 1 segundo
+            buzzer_tone(GPIO_BUZZ, 1000, 1000);  // 1000 Hz durante 1 segundo
+            printf("Buzzer tocando a 1000 Hz por 1 segundo\n");
+            break;
+
         default:
             gpio_put(GPIO_LED[0], false);
             gpio_put(GPIO_LED[1], false);
