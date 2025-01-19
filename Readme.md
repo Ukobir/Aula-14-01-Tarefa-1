@@ -6,7 +6,9 @@ A seguir a lista de comandos utilizados no teclado:
 - Aperte A para ligar o LED Azul
 - Aperte B para ligar o LED Rosa
 - Aperte C para ligar o LED Roxo
-- Aperte D para ligar o Buzzer
+- Aperte D para o Buzzer tocar a nota Dó (261Hz) por 1 s
+- Aperte * para acionar o efeito de piscar nos LEDs
+- Aperte # para ativar o Buzzer (1kHz) por 1 segundo
 - Obs.1: É necessário segurar a tecla por alguns segundos até que o comando seja registrado.
 - Obs.2: O programa constantemente envia o feedback da resposta do teclado pelo terminal.
 
