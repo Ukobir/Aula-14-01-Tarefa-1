@@ -31,6 +31,10 @@ void menu()
     printf("4 - Aperte D para ligar o Buzzer\n");
     printf("5 - Aperte * para acionar o efeito de piscar nos LEDs\n");
     printf("6 - Aperte # para ativar o Buzzer por 1 segundo\n");
+    printf("7 - Aperte 2 para ligar o LED Azul e LED Rosa\n");
+    printf("8 - Aperte 3 para ligar o LED Azul, LED Rosa e LED Rosa\n");
+    printf("9 - Aperte 4 para ligar o LED Azul e LED Roxo\n");
+    printf("10 - Aperte 5 para ligar o LED Rosa e LED Roxo\n");
     printf("Obs: É necessário segurar a tecla por alguns segundos até que o comando seja registrado\n");
 }
 
