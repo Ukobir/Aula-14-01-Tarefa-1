@@ -21,17 +21,6 @@ char KEY_MAP[16] = {
     '7', '8', '9', 'C',
     '*', '0', '#', 'D'};
 
-// Função para gerar um tom no buzzer
-void buzzer_tone(uint gpio, int duration_ms, int frequency_hz)
-{
-    for (int i = 0; i < duration_ms * frequency_hz / 1000; i++)
-    {
-        gpio_put(gpio, 1); // Liga o buzzer
-        busy_wait_us(500000 / frequency_hz); // Espera metade do período
-        gpio_put(gpio, 0); // Desliga o buzzer
-        busy_wait_us(500000 / frequency_hz); // Espera a outra metade
-    }
-}
 
 // função principal
 int main()
@@ -68,8 +57,8 @@ int main()
             break;
         case 'D':
             pino = GPIO_BUZZ;
-            ligaGPIO(pino);
-            printf("Buzzer (D) ativado\n");
+            buzzer_tone(GPIO_BUZZ, 1000, 261);  // 1000 Hz durante 1 segundo
+            printf("Buzzer tocando a nota Dó (261Hz) por 1 segundo\n");
             break;
 
         // Adicionando novas funções para o controle de LEDs e Buzzer
@@ -96,7 +85,7 @@ int main()
             gpio_put(GPIO_LED[1], false);
             gpio_put(GPIO_LED[2], false);
             gpio_put(GPIO_BUZZ, false);
-            printf("Todos os LEDs e o Buzzer foram desligados\n");
+            printf("Todos os LEDs e o Buzzer estão desligados\n");
             break;
         }
     }

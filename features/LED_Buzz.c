@@ -33,3 +33,15 @@ void menu()
     printf("6 - Aperte # para ativar o Buzzer por 1 segundo\n");
     printf("Obs: É necessário segurar a tecla por alguns segundos até que o comando seja registrado\n");
 }
+
+// Função para gerar um tom no buzzer
+void buzzer_tone(uint gpio, int duration_ms, int frequency_hz)
+{
+    for (int i = 0; i < duration_ms * frequency_hz / 1000; i++)
+    {
+        gpio_put(gpio, 1); // Liga o buzzer
+        busy_wait_us(500000 / frequency_hz); // Espera metade do período
+        gpio_put(gpio, 0); // Desliga o buzzer
+        busy_wait_us(500000 / frequency_hz); // Espera a outra metade
+    }
+}
