@@ -66,7 +66,10 @@ O projeto tem como objetivo:
 
 **Obs.2**: O programa constantemente envia o feedback da resposta do teclado pelo terminal.
 
-![Image](https://github.com/user-attachments/assets/d595b771-1715-45c9-82e3-b89dcb8525ee)
+<div align="center">
+      <img width="800px" src="https://github.com/user-attachments/assets/d595b771-1715-45c9-82e3-b89dcb8525eef" />
+      <p>Fig 1. Simulador.</p>
+   </div>
 
 ## Estrutura do Projeto
 
@@ -91,15 +94,46 @@ O projeto tem como objetivo:
    git clone https://github.com/Ukobir/Aula-14-01-Tarefa-1.git
 
     ```
+   
 ## Testes Realizados
 Os seguintes testes foram realizados para garantir o funcionamento correto do projeto:
 
-1. Acionamento individual dos LEDs (azul, rosa e roxo) pelas teclas A, B e C.
-2. Combinações de LEDs acionadas por teclas numéricas.
-3. Ativação do buzzer com frequências específicas pelas teclas D e #.
-4. Efeito de piscar LEDs com a tecla `*`.
-5. Feedback de comandos exibido no terminal para facilitar a depuração.
+1. **Acionamento individual do LED azul pela tecla A.**  
+   <div align="center">
+      <img width="800px" src="https://github.com/Ukobir/Aula-14-01-Tarefa-1/blob/master/scr/led-azul-gif.gif" />
+      <p>Fig 2. LED azul acionado pela tecla A.</p>
+   </div>
 
+2. **Acionamento individual do LED rosa pela tecla B.**  
+   <div align="center">
+      <img width="800px" src="https://github.com/Ukobir/Aula-14-01-Tarefa-1/blob/master/scr/led-b_gif.gif" />
+      <p>Fig 3. LED rosa acionado pela tecla B.</p>
+   </div>
+
+3. **Acionamento individual do LED roxo pela tecla C.**  
+   <div align="center">
+      <img width="800px" src="https://github.com/Ukobir/Aula-14-01-Tarefa-1/blob/master/scr/led-c.gif" />
+      <p>Fig 4. LED roxo acionado pela tecla C.</p>
+   </div>
+
+4. **Ativação do buzzer com frequências específicas pelas teclas D e #.**  
+   <div align="center">
+      <img width="800px" src="https://github.com/Ukobir/Aula-14-01-Tarefa-1/blob/master/scr/led-d.gif" />
+      <p>Fig 5. Ativação do buzzer pelas teclas D.</p>
+   </div>
+   
+  <div align="center">
+      <img width="800px" src="https://github.com/Ukobir/Aula-14-01-Tarefa-1/blob/master/scr/tecla-%23.gif" />
+      <p>Fig 6. Ativação do buzzer pelas teclas # por 1 segundo.</p>
+   </div>
+   
+5. **Efeito de piscar LEDs com a tecla `*`.**  
+   <div align="center">
+      <img width="800px" src="https://github.com/Ukobir/Aula-14-01-Tarefa-1/blob/master/scr/tecla-piscar.gif" />
+      <p>Fig 7. LEDs piscando ao pressionar a tecla `*`.</p>
+   </div>
+
+6. **Feedback de comandos exibido no terminal para facilitar a depuração.** 
 ---
 
 ## Vídeo Demonstração
