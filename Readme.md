@@ -11,6 +11,7 @@ A seguir a lista de comandos utilizados no teclado:
 - Aperte 3 para ligar o LED Azul, LED Rosa e LED Rosa
 - Aperte 4 para ligar o LED Azul e LED Roxo
 - Aperte 5 para ligar o LED Rosa e LED Roxo
+- Aperte 6 para emitir sinal de SOS em morse com o LED azul
 - Aperte * para acionar o efeito de piscar nos LEDs
 - Aperte # para ativar o Buzzer (1kHz) por 1 segundo
 - Obs.1: É necessário segurar a tecla por alguns segundos até que o comando seja registrado.
