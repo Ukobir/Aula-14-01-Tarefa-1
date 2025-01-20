@@ -94,7 +94,11 @@ O projeto tem como objetivo:
    git clone https://github.com/Ukobir/Aula-14-01-Tarefa-1.git
 
     ```
-   
+
+2. Abra o projeto no VS Code
+3. Compile o código.
+4. Utilize o simulador Wokwi ou a comunicação real com a placa para testar os comandos. 
+
 ## Testes Realizados
 Os seguintes testes foram realizados para garantir o funcionamento correto do projeto:
 
