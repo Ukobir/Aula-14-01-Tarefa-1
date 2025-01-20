@@ -22,3 +22,4 @@ A seguir a lista de comandos utilizados no teclado:
 
 ## URL do video do funcionamento do programa
 
+[Vídeo do funcionamento](https://youtu.be/wRjZaDKlV44)
