@@ -21,7 +21,6 @@ char KEY_MAP[16] = {
     '7', '8', '9', 'C',
     '*', '0', '#', 'D'};
 
-
 // função principal
 int main()
 {
@@ -114,6 +113,48 @@ int main()
             printf("LED Rosa e LED Roxo ativados\n");
             break;
 
+        case '6':
+            pino = GPIO_LED[0];
+            printf("LED Azul exibindo código Morse\n");
+
+            // Sinal Morse: SOS (... --- ...)
+            // Três pontos ("...")
+            for (int i = 0; i < 3; i++) {
+                gpio_put(pino, true);
+                busy_wait_ms(200); // Um ponto
+                gpio_put(pino, false);
+                if (i < 2) {
+                    busy_wait_ms(125); // Intervalo entre pontos
+                }
+            }
+
+            busy_wait_ms(250); // Intervalo entre letras
+
+            // Três traços ("---")
+            for (int i = 0; i < 3; i++) {
+                gpio_put(pino, true);
+                busy_wait_ms(800); // Um traço
+                gpio_put(pino, false);
+                if (i < 2) {
+                    busy_wait_ms(125); // Intervalo entre traços
+                }
+            }
+
+            busy_wait_ms(250); // Intervalo entre letras
+
+            // Três pontos ("...")
+            for (int i = 0; i < 3; i++) {
+                gpio_put(pino, true);
+                busy_wait_ms(200); // Um ponto
+                gpio_put(pino, false);
+                if (i < 2) {
+                    busy_wait_ms(125); // Intervalo entre pontos
+                }
+            }
+
+            busy_wait_ms(3000); // Intervalo final antes de reiniciar o ciclo
+            break;
+
         default:
             gpio_put(GPIO_LED[0], false);
             gpio_put(GPIO_LED[1], false);
@@ -124,3 +165,4 @@ int main()
         }
     }
 }
+
